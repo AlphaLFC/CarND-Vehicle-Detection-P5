@@ -31,7 +31,7 @@ The default settings of the following `FeatureExtractor` are listed as below:
  
  I applied `FeatureExtractor` on some test images, visualization as below.
  
- [!hog_features](output_images/hog_features.png)
+ ![hog_features](output_images/hog_features.png)
  
  ---
  ## 2. Train A Classifier
@@ -68,7 +68,7 @@ Code implementation is presented in [slide_windows.py](VehicleFinder/slide_windo
 
 I generated 435 windows for a SVM feature classifier, and 1045 for a convnet classifier. As shown below:
 
-[slide_windows](output_images/slide_windows.png)
+![slide_windows](output_images/slide_windows.png)
 
 
 ---
@@ -82,7 +82,7 @@ For the sake of speed, I use the convnet as well as the windows for convnet. The
 
 Below is the result of test images, each with a heatmap. The result is just perfect, with accurate bounding boxes and no false positive detections.
 
-[!test_image_result](output_images/test_images_result.png)
+![test_image_result](output_images/test_images_result.png)
 
 I tried `VehicleFinder4Image` on `test_video.mp4`. The processing speed is 8 frames per second. The result is OK, but the bounding boxes seems not perfectly stable from frame to frame. I will handle this problem in the next section. See the result ([link](test_video_out_0.mp4)).
 
