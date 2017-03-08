@@ -33,8 +33,8 @@ The default settings of the following `FeatureExtractor` are listed as below:
  
  ![hog_features](output_images/hog_features.png)
  
- ---
- ## 2. Train A Classifier
+---
+## 2. Train A Classifier
 
 This section include two parts. The first part presents a feature classifier using machine learning techniques. The second part presents a simple convnet classifier.
 
