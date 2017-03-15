@@ -38,7 +38,7 @@ The default settings of the following `FeatureExtractor` are listed as below:
 
 This section include two parts. The first part presents a feature classifier using machine learning techniques. The second part presents a simple convnet classifier.
 
-Code implementation is presented in [classifiers.py](VehicleFinder/classifiers.py) and section 2 in the [notebook](CarND-Vehicle-Detection-P5.ipynb)
+Code implementation is presented in [classifiers.py](VehicleFinder/classifiers.py) and section 2 in the [notebook](CarND-Vehicle-Detection-P5.ipynb).
 
 ### 2.1 Feature classifier
 
@@ -50,7 +50,7 @@ I trained a `LinearSVC` Classifier. The final valid accuray is 99.35%, which is 
 
 ### 2.2 Convnet classifier
 
-Classify an image directly using a simple convnet. My convnet consists of 3 `convolutional` layer and 2 `fully-connected` layer. Also, I embedded the normalization step into to network.
+Classify an image directly using a simple convnet. My convnet consists of 3 `convolutional` layer and 2 `fully-connected` layer. Also, I embedded the normalization step into the network.
 
 As compared to a SVM feature classifier, the convnet can also predict correctly even an image only present part of a car or the car is propotionally small.
 
@@ -64,7 +64,7 @@ I implement two methods to generate sliding windows. One for the feature classif
 - **windows for feature classifier**: Since such a classifier strictly limit the input image to be a car with proper fitted size, I generate the windows in a perspective way as the road.
 - **windows for convnet classifier**: Three sliding windows in different yrange and size.
 
-Code implementation is presented in [slide_windows.py](VehicleFinder/slide_windows.py) and section 3 in the [notebook](CarND-Vehicle-Detection-P5.ipynb)
+Code implementation is presented in [slide_windows.py](VehicleFinder/slide_windows.py) and section 3 in the [notebook](CarND-Vehicle-Detection-P5.ipynb).
 
 I generated 435 windows for a SVM feature classifier, and 1045 for a convnet classifier. As shown below:
 
@@ -76,7 +76,7 @@ I generated 435 windows for a SVM feature classifier, and 1045 for a convnet cla
 
 I implemented a `VehicleFinder` for image. The `VehicleFinder4Image` use a heatmap to reduce false positive results. As for the convnet classifier, the heatmap threshold is 4. One thing to note is that, I smoothed the heatmap for a more smooth car bbox result.
 
-Code implementation is presented in [vehicle_finder.py](VehicleFinder/vehicle_finder.py) and section 4 in the [notebook](CarND-Vehicle-Detection-P5.ipynb)
+Code implementation is presented in [vehicle_finder.py](VehicleFinder/vehicle_finder.py) and section 4 in the [notebook](CarND-Vehicle-Detection-P5.ipynb).
 
 For the sake of speed, I use the convnet as well as the windows for convnet. The convnet is 16 times faster than the feature classifier.
 
@@ -92,7 +92,7 @@ I tried `VehicleFinder4Image` on `test_video.mp4`. The processing speed is 8 fra
 
 The `VehicleFinder4Video` inherit from `VehicleFinder4Image` with just one difference: I averaged last `n_recs` (default as 5) heatmaps and then apply a threshold of 4. The result now become much stable.
 
-Code implementation is presented in [vehicle_finder.py](VehicleFinder/vehicle_finder.py) and section 4 in the [notebook](CarND-Vehicle-Detection-P5.ipynb)
+Code implementation is presented in [vehicle_finder.py](VehicleFinder/vehicle_finder.py) and section 4 in the [notebook](CarND-Vehicle-Detection-P5.ipynb).
 
 Applying `VehicleFinder4Video` on `test_video.mp4`, The result is no more words than perfect! See the result ([link](test_video_out.mp4)).
 
